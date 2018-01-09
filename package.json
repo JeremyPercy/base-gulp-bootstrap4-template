@@ -8,6 +8,7 @@
   },
   "author": "Jeremy-Percy Batten",
   "license": "ISC",
+  "repository": "https://github.com/JeremyPercy/base-gulp-bootstrap4-template.git",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.3",
     "jquery": "1.9.1 - 3"
