@@ -16,7 +16,7 @@ Clone the repository to your computer, in any desired directory.
 Open terminal, make sure your in the right directory. Use git clone https://github.com/JeremyPercy/base-gulp-bootstrap4-template.git
 ```
 
-When succesfull you can start using the project by using the following commandline.
+When successful make sure you have node.js installed on your computer then you can start working on the project by using the following commandline.
 
 ```
 npm install
