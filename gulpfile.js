@@ -37,12 +37,12 @@ gulp.task('sass', function() {
 });
 
 
-// Compile JS
+// Compile JS files
+
 gulp.task('script', function () {
     return gulp.src([
         'node_modules/jquery/jquery.js',
-        'node_modules/popper.js/dist/popper.js',
-        'node_modules/bootstrap/dist/js/bootstrap.js',
+        'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
         'src/js/**/*.js'
     ])
         .pipe(sourcemaps.init())
