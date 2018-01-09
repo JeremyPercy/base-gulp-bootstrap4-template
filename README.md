@@ -29,7 +29,7 @@ gulp watch
 ```
 
 ## How to
- You can make edit, create or remove Sass/scss and JS in the src file. However you can direct edit the html files in the web directory. All scss and js files will be compiled in a minified version in the web/assets directory.
+ You can make edit, create or remove Sass/scss and JS in the src directory. However you can direct edit the html files in the web directory. All scss and js files will be compiled in a minified version in the web/assets directory.
  You dont have to worry about dependencies they are already added with npm and compiled. Such as Jquerie and popper.js, which is needed for bootstrap. 
 
 ## Deployment
