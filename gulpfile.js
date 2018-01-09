@@ -69,7 +69,7 @@ gulp.task('watch', ['sass', 'script', 'imagemin'], function() {
         server: 'web'
     });
 
-    gulp.watch('src/scss/*.scss', ['sass']);
+    gulp.watch('src/scss/**/*.scss', ['sass']);
     gulp.watch('src/js/*.js', ['script']);
     gulp.watch('src/images/*', ['imagemin']);
     gulp.watch('web/**/*.html').on('change', browserSync.reload);
