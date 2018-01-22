@@ -25,8 +25,7 @@ gulp.task('imagemin', function () {
 // Compile sass into CSS & auto-inject into browsers
 
 gulp.task('sass', function() {
-    return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss',
-        'src/scss/**/*.scss'])
+    return gulp.src(['src/scss/**/*.scss'])
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(autoprefixer('last 2 version'))
@@ -39,7 +38,7 @@ gulp.task('sass', function() {
 
 // Compile JS files
 
-gulp.task('script', function () {
+gulp.task('scripts', function () {
     return gulp.src([
         'node_modules/jquery/jquery.js',
         'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
@@ -63,7 +62,7 @@ gulp.task('script', function () {
 
 // Static Server + watching scss/html files
 
-gulp.task('watch', ['sass', 'script', 'imagemin'], function() {
+gulp.task('watch', ['sass', 'scripts', 'imagemin'], function() {
 
     browserSync.init({
         server: 'web'
