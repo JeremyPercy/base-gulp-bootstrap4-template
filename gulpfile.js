@@ -79,7 +79,7 @@ gulp.task('custom-scripts', function () {
 
 // Static Server + watching scss/html files
 
-gulp.task('watch', ['sass', 'bundle-scripts', 'custom-scripts', 'imagemin'], function() {
+gulp.task('default', ['sass', 'bundle-scripts', 'custom-scripts', 'imagemin'], function() {
 
     browserSync.init({
         server: 'web'

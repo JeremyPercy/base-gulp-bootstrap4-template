@@ -9,6 +9,7 @@
 web/assets/css
 web/assets/js
 web/assets/images
+/package-lock.json
 
 ### Dev ###
 config.codekit

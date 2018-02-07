@@ -12,12 +12,12 @@ A step by step series of examples that tell you have to get a development env ru
 
 Clone the repository to your computer, in any desired directory.
 
-```
-Open terminal, make sure your in the right directory. Use git clone https://github.com/JeremyPercy/base-gulp-bootstrap4-template.git
-```
-
 When successful make sure you have node.js installed on your computer then you can start working on the project by using the following commandline.
-
+first install gulp globally:
+```
+npm install gulp -g
+```
+then:
 ```
 npm install
 ```
@@ -25,7 +25,7 @@ npm install
 Now you can make use of gulp by entering the follow line in the terminal and your up and running.
 
 ```
-gulp watch
+npm start
 ```
 
 ## How to
