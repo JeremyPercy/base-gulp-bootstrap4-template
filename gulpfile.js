@@ -38,11 +38,10 @@ gulp.task('sass', function() {
 
 // Compile JS files
 
-gulp.task('scripts', function () {
+gulp.task('bundle-scripts', function () {
     return gulp.src([
         'node_modules/jquery/jquery.js',
-        'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-        'src/js/**/*.js'
+        'node_modules/bootstrap/dist/js/bootstrap.bundle.js'
     ])
         .pipe(sourcemaps.init())
         .pipe(babel({
@@ -59,17 +58,36 @@ gulp.task('scripts', function () {
         .pipe(browserSync.stream());
 });
 
+gulp.task('custom-scripts', function () {
+    return gulp.src([
+        'src/js/**/*.js'
+    ])
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(concat('custom.js'))
+        .pipe(minify({
+            mangle: {
+                keepClassName: true
+            }
+        }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('web/assets/js'))
+        .pipe(browserSync.stream());
+});
 
 // Static Server + watching scss/html files
 
-gulp.task('watch', ['sass', 'scripts', 'imagemin'], function() {
+gulp.task('watch', ['sass', 'bundle-scripts', 'custom-scripts', 'imagemin'], function() {
 
     browserSync.init({
         server: 'web'
     });
 
     gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/js/*.js', ['script']);
+    gulp.watch('src/js/*.js', ['bundle-scripts']);
+    gulp.watch('src/js/*.js', ['custom-scripts']);
     gulp.watch('src/images/*', ['imagemin']);
     gulp.watch('web/**/*.html').on('change', browserSync.reload);
 });
