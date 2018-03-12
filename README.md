@@ -12,10 +12,14 @@ A step by step series of examples that tell you have to get a development env ru
 
 Clone the repository to your computer, in any desired directory.
 
-When successful make sure you have node.js installed on your computer then you can start working on the project by using the following commandline.
-first install gulp globally:
+Make sure you have gulp client installed globally. Doing so by the following command line.
 ```
-npm install gulp -g
+npm install --global gulp-cli
+```
+If you already have an old version of gulp -g installed please follow the next few commands to uninstall the old gulp first.
+```
+npm rm --global gulp
+rm /usr/share/man/man1/gulp.1
 ```
 then:
 ```
